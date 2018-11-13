@@ -1,0 +1,3 @@
+<input type="text" #todo name="todo" class="new-todo" placeholder="What needs to be done?" autofocus
+       (keyup.enter)="addTodoItem(todo.value); todo.value = null">
+

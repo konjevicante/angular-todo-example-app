@@ -1,0 +1,34 @@
+<section class="main">
+
+  <input id="toggle-all" class="toggle-all" type="checkbox" (click)="markAllAsCompleted()">
+
+  <label for="toggle-all">Mark all as complete</label>
+
+  <ul class="todo-list">
+
+    <li *ngFor="let todo of todos$ | async" [ngClass]="{ 'editing': todo.editing }">
+
+      <div class="view">
+
+        <input class="toggle" type="checkbox" [checked]="todo.completed" (click)="switchCompletedStatus(todo.id)">
+
+        <label (dblclick)="startEditing(todo);">{{ todo.content }}</label>
+
+        <button class="destroy" (click)="remove(todo.id)"></button>
+
+      </div>
+
+      <input *ngIf="todo.editing" type="text" id="todo-input" class="edit" value="{{ todo.content }}"
+             (keyup.enter)="update(todo, content.value);" (blur)="refreshTodos()">
+    </li>
+
+  </ul>
+
+</section>
+
+<app-todo-items-footer
+  [todoItemCount]="( todos$ | async ).length"
+  (filterCompletedStatusChanged)="onFilterCompletedStatusChanged($event)"
+  (removeCompletedStatusFilterChanged)="onRemoveCompletedStatusFilterChange($event)">
+</app-todo-items-footer>
+

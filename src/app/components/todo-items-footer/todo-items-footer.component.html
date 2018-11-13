@@ -1,0 +1,30 @@
+<footer class="footer">
+
+  <span class="todo-count">
+    <strong>{{ todoItemCount }}</strong> item left
+  </span>
+
+  <ul class="filters">
+
+    <li>
+
+      <a href="#" (click)="removeCompletedStatusFilter($event)"
+         [ngClass]="{'selected': selectedFilter === 'all'}">All</a>
+    </li>
+
+    <li>
+
+      <a href="#" (click)="filterCompletedStatus(false, $event)"
+         [ngClass]="{'selected': selectedFilter === 'active'}">Active</a>
+    </li>
+
+    <li>
+      <a href="#" (click)="filterCompletedStatus(true, $event)"
+         [ngClass]="{'selected': selectedFilter === 'completed'}">Completed</a>
+    </li>
+
+  </ul>
+
+  <button class="clear-completed" (click)="removeCompleted()">Clear completed</button>
+
+</footer>

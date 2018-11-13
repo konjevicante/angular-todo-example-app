@@ -4,11 +4,11 @@
 
     <h1>{{ title }}</h1>
 
-    <app-create-todo-item></app-create-todo-item>
+    <app-todo-create-item></app-create-item>
 
   </header>
 
-  <app-todo-items></app-todo-items>
+  <app-todo-items></app-list-items>
 
 </section>
 
