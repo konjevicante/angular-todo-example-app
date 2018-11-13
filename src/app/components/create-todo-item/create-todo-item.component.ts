@@ -15,7 +15,8 @@ export class CreateTodoItemComponent {
       id: this.uuidv4(),
       content: todoContent,
       completed: false,
-      editing: false
+      editing: false,
+      visible: true
     });
   }
 

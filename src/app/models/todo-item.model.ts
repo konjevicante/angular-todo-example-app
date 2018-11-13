@@ -3,4 +3,5 @@ export interface TodoItem {
   content: String;
   completed: Boolean;
   editing: Boolean;
+  visible: Boolean;
 }

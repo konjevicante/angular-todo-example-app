@@ -8,8 +8,8 @@ import { TodoService } from '../../services/todo.service';
 export class TodoItemsFooterComponent implements OnInit {
 
   @Input() todoItemCount: Number;
-  @Output() filterCompletedStatusChanged: EventEmitter<boolean> = new EventEmitter<boolean>();
-  @Output() removeCompletedStatusFilterChanged: EventEmitter<null> = new EventEmitter<null>();
+  @Output() filterCompletedChanged: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() removeCompletedFilterChanged: EventEmitter<null> = new EventEmitter<null>();
 
   selectedFilter: String = 'all';
 
@@ -21,15 +21,15 @@ export class TodoItemsFooterComponent implements OnInit {
     this.todoService.removeCompleted();
   }
 
-  filterCompletedStatus(completedStatus: boolean, event) {
+  filterCompleted(completed: boolean, event) {
     event.preventDefault();
-    this.selectedFilter = completedStatus ? 'completed' : 'active';
-    this.filterCompletedStatusChanged.emit(completedStatus);
+    this.selectedFilter = completed ? 'completed' : 'active';
+    this.filterCompletedChanged.emit(completed);
   }
 
-  removeCompletedStatusFilter(event) {
+  removeCompletedFilter(event) {
     event.preventDefault();
     this.selectedFilter = 'all';
-    this.removeCompletedStatusFilterChanged.emit();
+    this.removeCompletedFilterChanged.emit();
   }
 }

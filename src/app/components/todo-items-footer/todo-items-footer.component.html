@@ -8,18 +8,18 @@
 
     <li>
 
-      <a href="#" (click)="removeCompletedStatusFilter($event)"
+      <a href="#" (click)="removeCompletedFilter($event)"
          [ngClass]="{'selected': selectedFilter === 'all'}">All</a>
     </li>
 
     <li>
 
-      <a href="#" (click)="filterCompletedStatus(false, $event)"
+      <a href="#" (click)="filterCompleted(false, $event)"
          [ngClass]="{'selected': selectedFilter === 'active'}">Active</a>
     </li>
 
     <li>
-      <a href="#" (click)="filterCompletedStatus(true, $event)"
+      <a href="#" (click)="filterCompleted(true, $event)"
          [ngClass]="{'selected': selectedFilter === 'completed'}">Completed</a>
     </li>
 

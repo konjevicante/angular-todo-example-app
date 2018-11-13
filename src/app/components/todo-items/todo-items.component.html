@@ -28,7 +28,7 @@
 
 <app-todo-items-footer
   [todoItemCount]="( todos$ | async ).length"
-  (filterCompletedStatusChanged)="onFilterCompletedStatusChanged($event)"
-  (removeCompletedStatusFilterChanged)="onRemoveCompletedStatusFilterChange($event)">
+  (filterCompletedChanged)="onFilterCompletedChanged($event)"
+  (removeCompletedFilterChanged)="onRemoveCompletedFilterChange($event)">
 </app-todo-items-footer>
 

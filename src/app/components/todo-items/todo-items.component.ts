@@ -38,11 +38,11 @@ export class TodoItemsComponent implements OnInit {
     this.todoService.remove(todoId);
   }
 
-  onFilterCompletedStatusChanged(status: Boolean | null) {
-    this.todoService.filterStatus(status);
+  onFilterCompletedChanged(completed: Boolean) {
+    this.todoService.filterCompleted(completed);
   }
 
-  onRemoveCompletedStatusFilterChange() {
+  onRemoveCompletedFilterChange() {
     this.todoService.removeFilteringOnStatus();
   }
 
