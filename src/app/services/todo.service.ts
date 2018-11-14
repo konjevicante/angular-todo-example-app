@@ -70,20 +70,6 @@ export class TodoService {
       completed: true,
       editing: false,
       visible: true
-    },
-    {
-      id: '989b72ea-8c28-4f64-a798-01d366202076',
-      content: 'Cleanup code style',
-      completed: true,
-      editing: false,
-      visible: true
-    },
-    {
-      id: 'f06f458f-ac0c-4feb-8182-92b8c18107a6',
-      content: 'Upload to git',
-      completed: true,
-      editing: false,
-      visible: true
     }
   ];
 

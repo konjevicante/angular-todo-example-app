@@ -1,4 +1,4 @@
-# AngularTodoExampleApp
+# Todo MVC - Angular Example App
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.5.
 
@@ -25,3 +25,11 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Using Docker 
+
+```
+docker build -t angular-todo-example-app .
+
+docker run -d -it -p 4300:4300 --name=TodoMVC angular-todo-example-app yarn server
+```

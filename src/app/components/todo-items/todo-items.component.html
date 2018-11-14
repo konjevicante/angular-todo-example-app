@@ -18,8 +18,9 @@
 
       </div>
 
-      <input *ngIf="todo.editing" type="text" id="todo-input" class="edit" value="{{ todo.content }}"
-             (keyup.enter)="update(todo, content.value);" (blur)="refreshTodos()">
+      <input *ngIf="todo.editing" type="text" value="{{ todo.content }}"
+             id="todo-input" #todoInput class="edit"
+             (keyup.enter)="update(todo, todoInput .value);" (blur)="refreshTodos()">
     </li>
 
   </ul>
@@ -29,6 +30,6 @@
 <app-todo-items-footer
   [todoItemCount]="( todos$ | async ).length"
   (filterCompletedChanged)="onFilterCompletedChanged($event)"
-  (removeCompletedFilterChanged)="onRemoveCompletedFilterChange($event)">
+  (removeCompletedFilterChanged)="onRemoveCompletedFilterChange()">
 </app-todo-items-footer>
 
