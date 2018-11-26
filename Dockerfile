@@ -1,12 +1,10 @@
-FROM node:8
+FROM node:10
 
-WORKDIR /usr/src/app
+COPY . /app
 
-COPY package*.json ./
+WORKDIR /app
 
-RUN yarn install
-
-COPY . .
+RUN yarn install 
 
 RUN yarn build --prod
 
